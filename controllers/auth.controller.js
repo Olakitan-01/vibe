@@ -118,7 +118,7 @@ const resetPassword = async (req, res) => {
   try {
     const hashedOTP = crypto.createHash('sha256').update(otp).digest('hex');
 
-    const user = await prisma.user.findFirst({
+    const user = await prisma.user.findUnique({
       where: {
         email: email,
         passwordResetToken: hashedOTP,

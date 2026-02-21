@@ -10,6 +10,6 @@ router.get('/me', auth, getMe);
 
 
 //update user information
-router.post('/updateProfile', auth, updateMe);
+router.patch('/updateProfile', auth, updateMe);
 
 module.exports = router
